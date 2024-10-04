@@ -34,6 +34,7 @@ def bind_socket():
     # Set endpoint name
     endpoint_name = "endpoint-xgb-model"
     print(ml_client.online_endpoints)
+    print(list(ml_client.online_endpoints.list()))
     # Get the endpoint credentials
     endpoint = ml_client.online_endpoints.get(endpoint_name)
     print(endpoint)
