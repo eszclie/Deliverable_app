@@ -19,29 +19,10 @@ def bind_socket():
     subscription_id = os.environ["SUBSCRIPTION_ID"]
     resource_group = os.environ["RESOURCE_GROUP"]
     workspace_name = os.environ["WORKSPACE_NAME"]
-    print(subscription_id)
-    print(resource_group)
-    print(workspace_name)
-    # Create Azure ML client
-    ml_client = MLClient(
-        credential=DefaultAzureCredential(),
-        subscription_id=subscription_id,
-        resource_group_name=resource_group,
-        workspace_name=workspace_name,
-    )
-    print(ml_client)
-    print("hiereeeeeeeeeeeeeeeeeeeeeeeeee")
-    # Set endpoint name
-    endpoint_name = "endpoint-xgb-model"
-    print(ml_client.online_endpoints)
-    print(list(ml_client.online_endpoints.list()))
-    # Get the endpoint credentials
-    endpoint = ml_client.online_endpoints.get(endpoint_name)
-    print(endpoint)
+    score = os.eviron["scoring_uri"]
+    key = os.eviron["KEY"]
     global scoring_uri
-    scoring_uri = endpoint.scoring_uri
-    keys = ml_client.online_endpoints.get_keys(name=endpoint_name)
-    key = keys.primary_key
+    scoring_uri = score
     global headers
     headers = {"Authorization": ("Bearer " + key)}
     # return scoring_uri, headers
