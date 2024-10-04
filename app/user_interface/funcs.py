@@ -15,7 +15,7 @@ headers = {}
 
 def bind_socket():
     # Load configuration from environment variables
-    load_dotenv()
+
     subscription_id = os.environ["SUBSCRIPTION_ID"]
     resource_group = os.environ["RESOURCE_GROUP"]
     workspace_name = os.environ["WORKSPACE_NAME"]
@@ -27,12 +27,13 @@ def bind_socket():
         resource_group_name=resource_group,
         workspace_name=workspace_name,
     )
-
+    print("hiereeeeeeeeeeeeeeeeeeeeeeeeee")
     # Set endpoint name
     endpoint_name = "endpoint-xgb-model"
 
     # Get the endpoint credentials
     endpoint = ml_client.online_endpoints.get(endpoint_name)
+    print(endpoint)
     global scoring_uri
     scoring_uri = endpoint.scoring_uri
     keys = ml_client.online_endpoints.get_keys(name=endpoint_name)
