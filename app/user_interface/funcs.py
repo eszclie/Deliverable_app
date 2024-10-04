@@ -19,7 +19,9 @@ def bind_socket():
     subscription_id = os.environ["SUBSCRIPTION_ID"]
     resource_group = os.environ["RESOURCE_GROUP"]
     workspace_name = os.environ["WORKSPACE_NAME"]
-
+    print(subscription_id)
+    print(resource_group)
+    print(workspace_name)
     # Create Azure ML client
     ml_client = MLClient(
         credential=DefaultAzureCredential(),
@@ -27,6 +29,7 @@ def bind_socket():
         resource_group_name=resource_group,
         workspace_name=workspace_name,
     )
+    print(ml_client)
     print("hiereeeeeeeeeeeeeeeeeeeeeeeeee")
     # Set endpoint name
     endpoint_name = "endpoint-xgb-model"
