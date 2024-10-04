@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-import src.etl_neerslag.functions.get_average as avg
+import get_average as avg
 from app.user_interface.funcs import bind_socket, get_response, set_page_confic
 
 # Set the name and icon of the page
