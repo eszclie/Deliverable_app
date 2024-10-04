@@ -19,8 +19,8 @@ def bind_socket():
     subscription_id = os.environ["SUBSCRIPTION_ID"]
     resource_group = os.environ["RESOURCE_GROUP"]
     workspace_name = os.environ["WORKSPACE_NAME"]
-    score = os.eviron["scoring_uri"]
-    key = os.eviron["KEY"]
+    score = os.environ["scoring_uri"]
+    key = os.environ["KEY"]
     global scoring_uri
     scoring_uri = score
     global headers
