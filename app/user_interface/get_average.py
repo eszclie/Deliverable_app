@@ -32,8 +32,6 @@ neerslag["date"] = pd.to_datetime(neerslag["date"])
 neerslag["month"] = neerslag["date"].dt.month
 averages = neerslag.groupby("month")["neerslag_10e_mm"].mean()
 
-
-@functools.cache
 def get_rainfall(date: datetime.date):
     # Check if the date is already in the data
     result = neerslag[neerslag["date"] == date]
