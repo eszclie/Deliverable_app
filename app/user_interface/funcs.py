@@ -13,7 +13,6 @@ scoring_uri = ""
 headers = {}
 
 
-@st.cache_resource
 def bind_socket():
     # Load configuration from environment variables
     load_dotenv()
