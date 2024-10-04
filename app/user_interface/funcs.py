@@ -56,5 +56,5 @@ def get_response(in_data):
 def set_page_confic():
     st.set_page_config(
         page_title="Deliverable App",
-        page_icon="Deliverable_logo.png",
+        page_icon="images/Deliverable_logo.png",
     )
